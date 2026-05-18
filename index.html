@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOMINGO 17 DE MAYO DEL 2026</title>
+
+  <style>
+    :root{
+      --bg1:#05010b;
+      --bg2:#12001f;
+      --ink:#f6eaff;
+      --soft:#d9b8ff;
+      --purple:#b100ff;
+      --neon:#d100ff;
+      --neon2:#7a00ff;
+      --glass: rgba(255,255,255,0.06);
+      --border: rgba(209,0,255,0.25);
+      --shadow: 0 0 25px rgba(209,0,255,0.25);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Georgia", serif;
+    }
+
+    body{
+      min-height:100vh;
+      background: radial-gradient(circle at top, rgba(209,0,255,0.18), transparent 60%),
+                  radial-gradient(circle at bottom, rgba(122,0,255,0.20), transparent 60%),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:30px;
+      overflow-x:hidden;
+      color:var(--ink);
+    }
+
+    /* Estrellas */
+    .stars{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      opacity:0.9;
+      background-image:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.9), transparent 60%),
+        radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.8), transparent 60%),
+        radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.7), transparent 60%),
+        radial-gradient(2px 2px at 30% 80%, rgba(255,255,255,0.8), transparent 60%),
+        radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.6), transparent 60%),
+        radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.5), transparent 60%),
+        radial-gradient(2px 2px at 90% 85%, rgba(255,255,255,0.7), transparent 60%);
+      animation: twinkle 5s infinite alternate ease-in-out;
+    }
+
+    @keyframes twinkle{
+      from{opacity:0.5;}
+      to{opacity:1;}
+    }
+
+    /* Aura */
+    .aura{
+      position:fixed;
+      width:650px;
+      height:650px;
+      background: radial-gradient(circle, rgba(209,0,255,0.22), transparent 70%);
+      filter: blur(25px);
+      z-index:0;
+      animation: floatAura 6s infinite alternate ease-in-out;
+    }
+
+    @keyframes floatAura{
+      from{transform: translateY(-15px) scale(1);}
+      to{transform: translateY(20px) scale(1.05);}
+    }
+
+    /* Carta */
+    .letter-wrap{
+      width:100%;
+      max-width:920px;
+      position:relative;
+      z-index:2;
+    }
+
+    .seal-top{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      margin-bottom:18px;
+    }
+
+    .seal{
+      padding:12px 22px;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(209,0,255,0.15), rgba(122,0,255,0.15));
+      border: 1px solid rgba(209,0,255,0.35);
+      box-shadow: 0 0 25px rgba(209,0,255,0.20);
+      color: var(--soft);
+      letter-spacing: 2px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .letter{
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 45px 50px;
+      position:relative;
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Bordes luminosos */
+    .letter::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:22px;
+      padding:2px;
+      background: linear-gradient(135deg, rgba(209,0,255,0.8), rgba(122,0,255,0.7), rgba(255,255,255,0.1));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity:0.65;
+      pointer-events:none;
+    }
+
+    /* Decoración interna */
+    .ornament{
+      position:absolute;
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(209,0,255,0.20), transparent 70%);
+      filter: blur(12px);
+      z-index:0;
+    }
+
+    .ornament.o1{top:-70px; left:-60px;}
+    .ornament.o2{bottom:-80px; right:-70px;}
+    .ornament.o3{top:40%; right:-110px; width:220px; height:220px; opacity:0.7;}
+
+    .date{
+      font-size: 15px;
+      color: rgba(217,184,255,0.95);
+      letter-spacing:1px;
+      margin-bottom: 25px;
+      text-align:center;
+      font-style: italic;
+    }
+
+    h1{
+      text-align:center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: var(--ink);
+      text-shadow: 0 0 12px rgba(209,0,255,0.35);
+      letter-spacing:1px;
+    }
+
+    .content{
+      position:relative;
+      z-index:2;
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(246,234,255,0.95);
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .content p{
+      margin-bottom: 18px;
+    }
+
+    strong{
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(209,0,255,0.50);
+      font-weight: 700;
+    }
+
+    .signature{
+      margin-top: 35px;
+      text-align:right;
+      font-size: 16px;
+      color: rgba(217,184,255,0.95);
+      font-style: italic;
+    }
+
+    .signature span{
+      display:block;
+      margin-top:10px;
+      font-size:18px;
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 0 12px rgba(209,0,255,0.40);
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing:1px;
+    }
+
+    /* Frase neón final */
+    .neon-phrase{
+      margin-top: 40px;
+      padding: 22px 18px;
+      border-radius: 18px;
+      text-align:center;
+      font-size: 18px;
+      line-height:1.7;
+      color: #fdf2ff;
+      border: 1px solid rgba(209,0,255,0.35);
+      background: rgba(40,0,70,0.25);
+      box-shadow: 0 0 30px rgba(209,0,255,0.25);
+      text-shadow:
+        0 0 6px rgba(209,0,255,0.9),
+        0 0 12px rgba(209,0,255,0.8),
+        0 0 22px rgba(122,0,255,0.9);
+      font-weight: 600;
+    }
+
+    /* Botón */
+    .btn-area{
+      display:flex;
+      justify-content:center;
+      margin-top: 30px;
+    }
+
+    .magic-btn{
+      cursor:pointer;
+      padding: 14px 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(209,0,255,0.45);
+      background: linear-gradient(90deg, rgba(209,0,255,0.22), rgba(122,0,255,0.18));
+      color: rgba(255,255,255,0.95);
+      font-size: 15px;
+      letter-spacing: 1px;
+      box-shadow: 0 0 18px rgba(209,0,255,0.22);
+      transition: transform .2s ease, box-shadow .2s ease;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .magic-btn:hover{
+      transform: scale(1.04);
+      box-shadow: 0 0 30px rgba(209,0,255,0.35);
+    }
+
+    /* Ventana digital (modal) */
+    .modal{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,0.65);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      padding:25px;
+      z-index:10;
+    }
+
+    .modal.active{
+      display:flex;
+    }
+
+    .modal-box{
+      width:100%;
+      max-width:700px;
+      background: rgba(15,0,30,0.92);
+      border: 1px solid rgba(209,0,255,0.35);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(209,0,255,0.30);
+      padding: 28px 26px;
+      position:relative;
+      backdrop-filter: blur(10px);
+      animation: pop .25s ease;
+    }
+
+    @keyframes pop{
+      from{transform: scale(0.92); opacity:0;}
+      to{transform: scale(1); opacity:1;}
+    }
+
+    .modal-title{
+      text-align:center;
+      font-size: 20px;
+      margin-bottom: 14px;
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 0 10px rgba(209,0,255,0.40);
+      letter-spacing:1px;
+      font-weight:700;
+    }
+
+    .modal-content{
+      text-align:center;
+      color: rgba(217,184,255,0.95);
+      line-height: 1.7;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .photo-space{
+      margin-top: 18px;
+      border-radius: 18px;
+      border: 1px dashed rgba(209,0,255,0.55);
+      padding: 25px;
+      background: rgba(255,255,255,0.04);
+      color: rgba(217,184,255,0.80);
+      text-align:center;
+      font-size: 14px;
+      box-shadow: inset 0 0 18px rgba(209,0,255,0.12);
+    }
+
+    .close-btn{
+      position:absolute;
+      top:12px;
+      right:14px;
+      cursor:pointer;
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      border: 1px solid rgba(209,0,255,0.45);
+      background: rgba(209,0,255,0.10);
+      color: rgba(255,255,255,0.90);
+      font-size: 18px;
+      font-weight: 700;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      transition: transform .2s ease;
+      box-shadow: 0 0 15px rgba(209,0,255,0.20);
+    }
+
+    .close-btn:hover{
+      transform: scale(1.08);
+    }
+
+    /* Responsive */
+    @media (max-width: 700px){
+      .letter{
+        padding: 35px 22px;
+      }
+      h1{
+        font-size: 26px;
+      }
+      .content{
+        font-size: 16px;
+      }
+      .neon-phrase{
+        font-size: 16px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="stars"></div>
+  <div class="aura"></div>
+
+  <div class="letter-wrap">
+
+    <div class="seal-top">
+      <div class="seal">Carta Celestial • 7 Meses</div>
+    </div>
+
+    <div class="letter">
+
+      <div class="ornament o1"></div>
+      <div class="ornament o2"></div>
+      <div class="ornament o3"></div>
+
+      <div class="date">Domingo, 17 de mayo de 2026 — Noche</div>
+
+      <h1>Mi amor…</h1>
+
+      <div class="content">
+
+        <p>
+          Esta noche vuelvo a escribirte porque mi corazón no sabe quedarse quieto cuando se trata de ti.
+          Porque hoy cumplimos <strong>siete meses</strong>, y aunque el tiempo parezca poco para el mundo,
+          para mí… contigo ha sido suficiente para sentir que mi vida cambió para siempre.
+        </p>
+
+        <p>
+          Hoy a las <strong>12 am</strong> te dejé una carta, como quien deja un beso guardado en la madrugada…
+          y me imaginé tu carita leyéndola quizá en la mañana, con ese sueño todavía pegado en tus ojos.
+          Y no sabes lo que me provoca imaginarte así… tierna, real, preciosa… como si fueras un pedacito
+          de cielo caminando en este mundo.
+        </p>
+
+        <p>
+          <strong>Siete meses</strong>, amor…<br>
+          <strong>siete meses</strong> en los que tu nombre se volvió mi pensamiento favorito,
+          mi costumbre más bonita, mi debilidad más dulce y mi orgullo más grande.
+          <strong>Siete meses</strong> en los que mi alma aprendió a reconocer la tuya,
+          como si desde antes de conocerte ya te estuviera esperando.
+        </p>
+
+        <p>
+          Y es que contigo no siento un amor normal…<br>
+          contigo siento un amor que <strong>arde</strong>, que <strong>abraza</strong>,
+          que <strong>protege</strong>, que se desespera por tenerte cerca.
+          A veces me basta con imaginarte para que mi pecho se llene de ganas…
+          ganas de besarte lento, de mirarte como si fueras lo único que existe,
+          de perderme en ti sin miedo.
+        </p>
+
+        <p>
+          Porque tú no eres solo mi novia…<br>
+          tú eres <strong>mi lugar seguro</strong>.<br>
+          mi paz… y al mismo tiempo mi tormenta más hermosa.<br>
+          mi niña… mi mujer… <strong>mi todo</strong>.
+        </p>
+
+        <p>
+          Y esta noche, amor, quiero que lo sepas con claridad:<br>
+          <strong>me enamoras de una manera que no sé explicar sin que me tiemble el alma.</strong>
+        </p>
+
+        <p>
+          Me enamora tu forma de ser, tu esencia, tu manera de existir… me enamora lo que provocas en mí.
+          Porque desde que llegaste, mi corazón se volvió más sensible, más humano, más vivo…
+          y también más tuyo.
+        </p>
+
+        <p>
+          Quiero seguir cumpliendo meses contigo… no solo <strong>siete</strong>.<br>
+          Quiero cumplir años.<br>
+          Quiero cumplir sueños.<br>
+          Quiero cumplir promesas.
+        </p>
+
+        <p>
+          Quiero ser el hombre que te cuide incluso cuando no estés bien,
+          el que te abrace cuando el mundo te canse, el que te bese la frente cuando estés triste…
+          y el que te haga sentir deseada cuando quieras sentirte mujer,
+          porque para mí tú eres arte… eres fuego… eres una tentación preciosa que amo con devoción.
+        </p>
+
+        <p>
+          Esta noche solo quiero decirte algo simple pero eterno:<br><br>
+          <strong>felices siete meses, mi amor.</strong>
+        </p>
+
+        <p>
+          Gracias por existir en mi vida…<br>
+          gracias por dejarme amarte…<br>
+          y gracias por ser tú, así de perfecta, así de celestial, así de mía.
+        </p>
+
+        <p>
+          Te amo con un amor que no se apaga ni con el sueño, ni con la distancia, ni con el tiempo…
+          te amo como si mi alma hubiera nacido para encontrarte.
+        </p>
+
+        <p>
+          Y si algún día dudas… solo recuerda esto:<br>
+          <strong>yo te elijo hoy, te elijo mañana… y te elijo para siempre.</strong>
+        </p>
+
+        <p>
+          Buenas noches, mi vida…<br>
+          mi cielo…<br>
+          mi amor eterno. 💖🌙✨
+        </p>
+
+        <div class="signature">
+          <span>JUAN KALETH MENDOZA PRIMERA 💜</span>
+        </div>
+
+        <div class="neon-phrase">
+          En cada latido mío vive tu nombre, y en cada noche oscura tu amor se vuelve mi constelación favorita,
+          porque tú no eres parte de mi vida… tú eres mi destino escrito en luz eterna, mi milagro más dulce,
+          mi promesa más sagrada y la razón por la que mi alma aprendió a creer en lo imposible…
+          <strong>VALERIA PETRO VILLAZÓN</strong>.
+        </div>
+
+        <div class="btn-area">
+          <button class="magic-btn" onclick="openModal()">
+            Abrir Ventana Especial ✨
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+
+      <div class="close-btn" onclick="closeModal()">✕</div>
+
+      <div class="modal-title">Un mensaje escondido para ti 💜</div>
+
+      <div class="modal-content">
+        <!-- ESPACIO PARA MENSAJE FUTURO SOBRE LA FOTO -->
+        <strong>[AQUÍ VA EL MENSAJE SOBRE LA FOTO]</strong>
+      </div>
+
+      <div class="photo-space">
+        <!-- ESPACIO PARA INSERTAR FOTO -->
+        <strong>[AQUÍ IRÁ LA FOTO]</strong>
+        <br><br>
+        (Cuando me muestres la imagen, aquí la pondremos y crearé el mensaje perfecto.)
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function openModal(){
+      document.getElementById("modal").classList.add("active");
+    }
+
+    function closeModal(){
+      document.getElementById("modal").classList.remove("active");
+    }
+
+    // Cerrar al tocar afuera
+    window.addEventListener("click", function(e){
+      const modal = document.getElementById("modal");
+      if(e.target === modal){
+        closeModal();
+      }
+    });
+  </script>
+
+</body>
+  </html>
